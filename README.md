@@ -1,3 +1,2 @@
 # Problem Solving
-# Leetcode 
-# AIZU Online Judge 
+ Leetcode & AIZU Online Judge 
