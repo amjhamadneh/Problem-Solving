@@ -1,24 +1,16 @@
 class Solution {
-     public List<Integer> intersection(int[][] arr) {
-        List<Integer> list = new ArrayList<>();
-        for (int i : arr[0]) {
-            if (helper(i, arr, 1)) list.add(i);
+    public List<Integer> intersection(int[][] nums) {
+        int len = nums.length;
+        int []freq = new int[1005];
+        for(int i = 0; i < len; ++i){
+            for(int j = 0; j < nums[i].length; ++j)
+                freq[nums[i][j]]++;
         }
-        Collections.sort(list);
-        return list;
-    }
-
-    private static boolean helper(int target, int[][] arr, int start) {
-        for (int i = start; i < arr.length; i++) {
-            boolean b = false;
-            for (int k : arr[i]){
-                if (k == target) {
-                    b = true;
-                    break;
-                }
-            }
-            if (!b) return false;
+        List<Integer> res= new ArrayList<>();
+        for(int i = 0;i < 1005; ++i){
+            if(freq[i] == len)
+                res.add(i);
         }
-        return true;
+        return res;
     }
 }
