@@ -1,6 +1,6 @@
 class Solution {
 private:
-    string res = "11";
+    string res = "1";
     void change(){
         int i = 0, j = 1;
         string temp = "";
@@ -17,9 +17,8 @@ private:
     }
 public:
     string countAndSay(int n) {
-        if(n == 1) return "1";
-        n-=2;
-        while(n--){
+        if(n == 1) return res;
+        while(n-- > 1){
             change();
         }
         return res;
